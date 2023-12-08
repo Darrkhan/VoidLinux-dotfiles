@@ -1,6 +1,6 @@
 # dotfiles
 
-##I run on a void-linux 
+## I run on a void-linux 
 What you need to do :
 
 - install rofi-wifi-menu (with nmcli) and add it to the path or modify the sxhkdrc to match your install.
