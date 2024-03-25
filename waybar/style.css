@@ -1,0 +1,52 @@
+window#waybar {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 0;
+}
+
+.modules-left {
+  margin-left: 10px;
+}
+
+.modules-right {
+  margin-right: 10px;
+  color: rgba(34,33 ,44 , 1);
+}
+
+#workspaces button {
+  color: rgba(34, 33, 44, 0.5);
+  transition: color 0.5s ease-in;
+  background: transparent;
+}
+
+#workspaces button.hover {
+  border: solid rgba(34, 33, 44, 0.5);
+}
+
+#workspaces button.active {
+  color: rgba(34, 33, 44, 1);
+}
+
+#workspaces button.focused {
+  color: rgba(34, 33, 44, 0.5);
+}
+
+#workspace button.urgent {
+  color: rgba(149, 128, 255, 1);
+}
+
+#pipewire {
+  color: rgba(34, 33, 44, 1);
+}
+
+#pipewire.muted {
+  color: rgba(34, 33, 44, 1);
+}
+
+#taskbar button {
+  background: transparent;
+  transition: background 0.5s linear;
+}
+
+#taskbar button.active {
+  background: rgba(34, 33, 44, 0.2);
+}
