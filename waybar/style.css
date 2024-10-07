@@ -1,52 +1,126 @@
-window#waybar {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 0;
+* {
+    border-radius: 10px;
+    font-family: JetBrainsMono, Symbols Nerd Font;
+    font-size: 12px;
 }
 
-.modules-left {
-  margin-left: 10px;
-}
-
-.modules-right {
-  margin-right: 10px;
-  color: rgba(34,33 ,44 , 1);
-}
+@define-color bg #f5f7fa;
+@define-color fg #123354;
+@define-color red #d25c61;
+@define-color blue #08a3ed;
+@define-color green #aaffaa;
+@define-color yellow #ffc762;
+@define-color orange #ffaf00;
+@define-color vilet #cf8ef4;
+@define-color gray #e4e8ee;
+@define-color gray2 #90a4ae;
 
 #workspaces button {
-  color: rgba(34, 33, 44, 0.5);
-  transition: color 0.5s ease-in;
-  background: transparent;
+    padding: 0px 5px;
+    margin: 4px 5px;
+    background-color: @bg;
+    color: @gray2;
+    border-radius: 10px;
 }
-
-#workspaces button.hover {
-  border: solid rgba(34, 33, 44, 0.5);
+#workspaces button:hover {
+    background: @gray;
+    color: @fg;
+    border-radius: 10px;
 }
-
-#workspaces button.active {
-  color: rgba(34, 33, 44, 1);
-}
-
 #workspaces button.focused {
-  color: rgba(34, 33, 44, 0.5);
+    background: @bg;
+    color: @fg;
+    border-radius: 10px;
+}
+#workspaces button.urgent {
+    background-color: #eb4d4b;
 }
 
-#workspace button.urgent {
-  color: rgba(149, 128, 255, 1);
+#custom-menu {
+    color: @fg;
+    background-image: linear-gradient(90deg, #08a3ed 10%, #1dbffa 80%);
+    padding: 0px 10px;
+    margin: 5px 10px;
+    border-radius: 10px;
 }
 
-#pipewire {
-  color: rgba(34, 33, 44, 1);
+#clock {
+    padding: 0px 10px;
+    margin: 5px 0px;
+    color: @fg;
+    background-color: @gray;
+    border-radius: 10px 0px 0px 10px;
 }
 
-#pipewire.muted {
-  color: rgba(34, 33, 44, 1);
+#tray {
+    padding: 0px 10px;
+    margin: 5px 5px;
+    color: @fg;
+    background: @gray;
+    border-radius: 10px;
 }
 
-#taskbar button {
-  background: transparent;
-  transition: background 0.5s linear;
+#wireplumber {
+    padding: 0px 10px 0px 10px;
+    margin: 5px 0px 5px 5px;
+    color: @fg;
+    background: @gray;
+    border-radius: 10px 0px 0px 10px;
 }
 
-#taskbar button.active {
-  background: rgba(34, 33, 44, 0.2);
+#cpu{
+    padding: 0px 10px;
+    margin: 5px 0px;
+    color: @fg;
+    background: @gray;
+    border-radius: 0px;
+}
+#memory{
+    padding: 0px 10px;
+    margin: 5px 0px;
+    color: @fg;
+    background: @gray;
+    border-radius: 0px;
+}
+#custom-notifications {
+  padding: 0px 10px;
+  margin: 5px 0px;
+  color: @fg;
+  background: @gray;
+  border-radius: 0px 10px 10px 0px;
+
+}
+
+#custom-power {
+    color: @fg;
+    background: rgb(63,103,193);
+    background: radial-gradient(circle, rgba(63,103,193,1) 0%, rgba(2,0,36,1) 100%);
+    padding: 0px 10px;
+    margin: 5px 10px;
+    border-radius: 10px;
+}
+
+#battery {
+  padding: 0px 10px 0px 5px;
+  margin: 5px 0px;
+  color: @fg;
+  background: @gray;
+  border-radius: 0px 10px 10px 0px;
+
+}
+
+#network {
+  padding: 0px 10px;
+  margin: 5px 0px;
+  color: @fg;
+  background: @gray;
+  border-radius: 0px;
+}
+
+#bluetooth {
+  padding: 0px 10px;
+  margin: 5px 0px;
+  color: @fg;
+  background: @gray;
+  border-radius: 0px;
 }

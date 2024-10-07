@@ -1,70 +1,75 @@
 {
   "layer": "top",
-  "position": "bottom",
-  // "output": "eDP-1",
-  "spacing": 15,
+  "position": "top",
+  "height": 30,
+  "width": 1420,
+  "margin-top": 7,
   "modules-left": [
-    "wlr/taskbar"
+    "sway/workspaces"
   ],
-  "modules-center": ["hyprland/workspaces"],
+  "modules-center": ["clock", "network", "bluetooth", "custom/notifications"],
   "modules-right": [
-    "keyboard-state",
+    "wireplumber",
     "cpu",
     "memory",
-    "bluetooth",
-    "network",
     "battery",
-    "wireplumber",
-    "clock",
-    "tray"
+    "custom/power"
   ],
+
   "wireplumber": {
-    "format": "<span size='14pt' rise='1000'>{icon}</span> <span rise='2000'>{volume}%</span>",
-    "format-muted": "<span size='14pt' rise='1000'></span> <span rise='2000'>MUTE</span>",
+    "format": "<span size='10pt' rise='1000'>{icon}</span>",
+    "format-muted": "<span size='10pt' rise='1000'></span>",
     "max-volume": 100,
-    "format-icons": ["","","", "", ""],
+    "format-icons": ["","","","",""],
     "reverse-scrolling": true,
-    "scroll-step": 0.4
+    "scroll-step": 0.4,
+    "tooltip-format":"{volume} %"
   },
-  "hyprland/workspaces": {
+  
+  "sway/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
-      "active": "",
-      "default": ""
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "󰖟",
     },
-    "sort-by-number": true,
+    "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+      },
+    "tooltip": false
   },
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 24,
-    "icon-theme": "WhiteSur-purple-dark",
-    "tooltip": false,
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": ["foot"],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
-    }
-  },
+  
   "battery": {
-    "format": "<span size='14pt' rise='1000'>{icon}</span>",
-    "format-icons": [" ", " "," "," "," "],
+    "format": "<span size='10pt' rise='1000'>{icon}</span>",
+    "format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
     "format-charging": "󰢝 {capacity}%",
     "tooltip-format": "{capacity}%, {timeTo}",
     "max-lenght": 16
   },
   "network": {
     "format": "{ifname}",
-    "format-wifi": "<span size='14pt' rise='1000'>󰖩 </span>",
+    "format-wifi": "<span size='10pt' rise='1000'>󰖩 </span>",
     "format-ethernet": "{ipaddr}/{cidr} 󰈀 ",
     "format-disconnected": "󰖪 ",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)"
   },
   "bluetooth": {
-    "format": "<span size='14pt' rise='1000'></span>",
+    "format": "<span size='10pt' rise='1000'></span>",
     "on-click": "alacritty --class floatterm -e bluetuith",
-    "format-connected": "<span size='14pt' rise='1000'></span> <span size='12pt' rise='1000'>{device_alias}</span>",
-    "format-connected-battery": "<span size='14pt' rise='1000'></span> <span size='12pt' rise='1000'>{device_alias} {device_battery_percentage}%</span>",
+    "format-connected": "<span size='10pt' rise='1000'></span> <span size='10pt' rise='1000'>{device_alias}</span>",
+    "format-connected-battery": "<span size='10pt' rise='1000'></span> <span size='10pt' rise='1000'>{device_alias} {device_battery_percentage}%</span>",
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
@@ -72,31 +77,27 @@
   },
   "cpu": {
     "interval": 20,
-    "format": "<span size='14pt' rise='1000'> </span>",
-    "max-length": 5
+    "format": "<span size='10pt' rise='1000'> </span>",
+    "max-length": 5,
   },
   "memory": {
     "interval": 20,
-    "format": "<span size='14pt' rise='1000'> </span>",
+    "format": "<span size='10pt' rise='1000'> </span>",
     "max-length": 5
   },
   "clock": {
     "timezone": "Europe/Paris",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "<span size='14pt' font_weight='bold'>{:%H:%M}</span>",
-    "format-alt": "<span size='14pt' font_weight='bold'>{:%d/%m/%Y}</span>"
+    "format": "<span size='10pt' font_weight='bold'>{:%H:%M}</span>",
+    "format-alt": "<span size='10pt' font_weight='bold'>{:%d/%m/%Y}</span>"
   },
-  "tray": {
-    "icon-size": 21
+  "custom/power": {
+	  "format": "<span size='10pt' color=\"#f5f7fa\">{icon}</span>",
+	  "format-icons": {"default": [""]},
+	  "on-click": "wlogout",
   },
-  "keyboard-state": {
-    "capslock": true,
-    "format": {
-        "capslock": "<span size='14pt' rise='1000'>{icon}</span>"                                                                                                                                                       
-    },
-    "format-icons": {
-        "locked": " ",
-        "unlocked": " "
-    }
-}
+  "custom/notifications": {
+  	"format": "<span size='10pt'>󰂚</span>",
+	"on-click": "swaync-client -t -sw",
+  },
 }

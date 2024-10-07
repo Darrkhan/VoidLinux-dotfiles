@@ -1,41 +1,34 @@
 {
     "label" : "lock",
-    "action" : "hyprlock",
-    "text" : "",
+    "action" : "swaylock -f -C /home/darrkhan/.config/swaylock/config -i /home/darrkhan/.config/wlogout/blurred-stars.jpg",
+    "text" : "󱅞",
     "keybind" : "l"
+}
+
+{
+    "label" : "shutdown",
+    "action" : "loginctl poweroff",
+    "text" : "󰐥",
+    "keybind" : "s"
 }
 
 {
     "label" : "logout",
     "action" : "loginctl terminate-user $USER",
-    "text" : "",
+    "text" : "󰍃",
     "keybind" : "e"
 }
 
 {
     "label" : "reboot",
     "action" : "loginctl reboot",
-    "text" : "",
+    "text" : "󰜉",
     "keybind" : "r"
-}
-
-{
-    "label" : "shutdown",
-    "action" : "loginctl poweroff",
-    "text" : "",
-    "keybind" : "s"
-}
-
-{
-    "label" : "hibernate",
-    "action" : "loginctl hibernate",
-    "text" : "",
-    "keybind" : "h"
 }
 
 {
     "label" : "suspend",
     "action" : "loginctl suspend",
-    "text" : "",
+    "text" : "󰤄",
     "keybind" : "u"
 }
