@@ -1,0 +1,54 @@
+* {
+	font-size: 8rem;
+    color: #123354;
+	background-image: none;
+}
+window {
+	background-image: url("/home/darrkhan/.config/wlogout/blurred-stars.jpg");
+    background-size: cover;
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(245, 247, 250, 0.6);
+    margin-top: 153px;
+    margin-bottom: 153px;
+    margin-left: 27px;
+    margin-right: 27px;
+    padding: 3px;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(245, 247, 250, 0.1);
+}
+
+button:focus {
+    background-color: rgba(63,103,193,1);
+}
+
+/*#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+*/
+#suspend {
+    padding-left: 0px;
+    padding-right: 6px;
+}
+
+#shutdown {
+    padding-left: 0px;
+    padding-right: 6px;
+}
+#reboot {
+    padding-left: 0px;
+    padding-right: 6px;
+}
