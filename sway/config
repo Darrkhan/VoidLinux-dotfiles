@@ -1,0 +1,40 @@
+# INCLUDE
+include /etc/sway/sway_config.d/*
+include $HOME/.config/sway/sway_config.d/*
+
+font pango:Hack Nerd Font Regular 12
+default_border pixel 1
+
+gaps inner 5
+gaps outer 5
+smart_gaps off
+smart_borders on
+
+# inactive window fade amount. 0.0 = no dimming, 1.0 = fully dimmed
+#default_dim_inactive 0.0
+#dim_inactive_colors.unfocused #000000FF
+#dim_inactive_colors.urgent #900000FF
+
+seat * xcursor_theme default 32
+
+client.focused          #fabd2f #fabd2f #fabd2f #fabd2f #8ec07c
+client.focused_inactive #fabd2f #fabd2f #fabd2f #1d2021 #1d2021
+client.unfocused        #1d2021 #1d2021 #1d2021 #1d2021 #1d2021
+client.urgent           #fb4934 #fb4934 #fb4934 #fb4934 #fb4934
+
+# Status Bar
+bar {
+    position top
+    status_command while $HOME/.local/bin/swaybar.sh; do sleep 1; done
+    colors {
+        background #1d2021
+        statusline #ebdbb2
+
+        # border / background / text
+        focused_workspace  #83a598 #83a598 #1d2021
+        active_workspace   #1d2021 #1d2021 #83a598
+        inactive_workspace #1d2021 #1d2021 #ebdbb2
+        urgent_workspace   #1d2021 #1d2021 #fb4934
+        binding_mode       #b8bb26 #b8bb26 #1d2021
+    }
+}
