@@ -17,8 +17,8 @@ I have opted for SwayFx with Waybar, following all my requirements. Both Wlogout
 Feel free to explore and adapt elements of my workflow to enhance your's. If you're interested, my dotfiles and potentially an installation script are available within this repository.
 
 ## Screeshots
-![screenshot](https://github.com/darrkhan/VoidLinux-dotfiles/blob/main/screen-1.png)
-![screenshot](https://github.com/darrkhan/VoidLinux-dotfiles/blob/main/screen-2.png)
+![screenshot](https://github.com/darrkhan/VoidLinux-dotfiles/blob/SwayFx/screen-1.png)
+![screenshot](https://github.com/darrkhan/VoidLinux-dotfiles/blob/SwayFx/screen-2.png)
 
 ## Requirements
 #### Fonts
