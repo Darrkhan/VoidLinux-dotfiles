@@ -28,7 +28,7 @@ else
 fi
 
 # Show if we are connected or not
-network_info=$(ip route show default | grep -q 'default' && echo "󰖩" || echo "󱛅")
+network_info=$(ip route show default | grep -q 'default' && echo "󰖩 " || echo "󱛅 ")
 wifi_ssid=$(wpa_cli status | grep '^ssid=' | cut -d'=' -f2)
 [ -n "$wifi_ssid" ] && network_info="Wifi: $wifi_ssid"
 
