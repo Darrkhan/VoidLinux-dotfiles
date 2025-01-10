@@ -6,7 +6,7 @@ Welcome to my dotfiles repository! This is where I store and manage the configur
 
 - **Distro**: Void Linux (musl)
 - **Window Manager**: Sway (Wayland)
-- **Shell**: bash
+- **Shell**: bash + starship
 - **Editor**: Neovim with essential plugins
 - **Terminal**: alacritty
 - **Themes**: Customs light and dark themes for Sway and other apps
@@ -45,4 +45,5 @@ Themes are managed by a cron task using `switch_theme.sh`
 - Configured Swaybar using `swaybar.sh`.
 
 ## Screenshots
-- Incoming
+![Dark theme](https://github.com/Darrkhan/VoidLinux-dotfiles/blob/Sway/dark_theme.png?raw=true)
+![Light theme](https://github.com/Darrkhan/VoidLinux-dotfiles/blob/Sway/light_theme.png?raw=true)
