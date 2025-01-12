@@ -1,0 +1,16 @@
+# INCLUDE
+include /etc/sway/sway_config.d/*
+include ~/.config/sway/theme
+include $HOME/.config/sway/sway_config.d/*
+
+font pango:UbuntuMono Nerd Font Regular 13
+default_border pixel 1
+
+gaps inner 5
+gaps outer 5
+smart_gaps off
+smart_borders on
+
+seat * xcursor_theme default 32
+
+

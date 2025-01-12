@@ -1,25 +1,49 @@
-## Void Linux Installation
+# My Dotfiles 🖥️
 
-The system is set up on a ext4 file system nested within an encrypted LVM volume.
+Welcome to my dotfiles repository! This is where I store and manage the configuration files for my Linux system. 
 
-## Configuration and Ricing
+## Overview
 
-I have opted for SwayFx with Waybar, following all my requirements. Both Wlogout and Swaylock function seamlessly and can be customized easily. I droped Hyprland because it was to heavy for me, and it's updated to often for me, I need something stable and minimal, SwayFx is perfect for that.
+- **Distro**: Void Linux (musl)
+- **Window Manager**: Sway (Wayland)
+- **Shell**: bash + starship
+- **Editor**: Neovim with essential plugins
+- **Terminal**: alacritty
+- **Themes**: Customs light and dark themes for Sway and other apps
+- **Additional Tools**:
+  - Firefox
+  - Neovim
+  - Nnn
+  - Wmenu
+  - Swaylock
+  - Wlogout
+  - Tmux
 
-## Software
+## Features
 
-- **Libvirt with KVM/QEMU:** Used for managing all my virtual machines.
-- **Neovim:** My preferred text editor for smaller projects.
-- **Obsidian:** Utilized for note-taking and organization.
-- **Thunar File Manager:** Handling file management tasks.
-- **Alacritty Terminal:** Serving as my terminal emulator.
+### Sway Setup
+- Modular configuration stored in `~/.config/sway/sway_config.d`.
+- Organized files for:
+  - Autostart programs
+  - Input and monitor settings
+  - Keybindings and custom rules
 
-Feel free to explore and adapt elements of my workflow to enhance your's. If you're interested, my dotfiles and potentially an installation script are available within this repository.
+### Themes
+Themes are managed by a cron task using `switch_theme.sh`
+- **Light Theme**:
+  - Background: `#f2e9de`
+  - Foreground: `#575268`
+  - Accent: `#9c6644`
+  - Urgent: `#c34043`
+  - Inactive: `#d3cec4`
+- **Dark Theme**:
+  - Background: `#1e1e2e`
+  - Foreground: `#cdd6f4`
+  - Accent: `#89b4fa`
+  - Urgent: `#f38ba8`
+  - Inactive: `#313244`
+- Configured Swaybar using `swaybar.sh`.
 
-## Screeshots
-![screenshot](https://github.com/darrkhan/VoidLinux-dotfiles/blob/main/screen-1.png)
-![screenshot](https://github.com/darrkhan/VoidLinux-dotfiles/blob/main/screen-2.png)
-
-## Requirements
-#### Fonts
-  Nerd Fonts and Font awesome 
+## Screenshots
+![Dark theme](https://github.com/Darrkhan/VoidLinux-dotfiles/blob/Sway/dark_theme.png?raw=true)
+![Light theme](https://github.com/Darrkhan/VoidLinux-dotfiles/blob/Sway/light_theme.png?raw=true)

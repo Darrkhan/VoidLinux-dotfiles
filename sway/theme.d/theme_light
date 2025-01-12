@@ -1,0 +1,29 @@
+# ~/.config/sway/theme.d/theme_light
+
+# Colors
+set $background #f2e9de
+set $foreground #575268
+set $accent     #9c6644
+set $urgent     #c34043
+set $inactive   #d3cec4
+
+# Client Colors
+client.focused          $accent $accent $accent $foreground $foreground
+client.focused_inactive $inactive $inactive $inactive $background $background
+client.unfocused        $inactive $inactive $inactive $background $background
+client.urgent           $urgent $urgent $urgent $urgent $urgent
+
+# Bar Colors
+bar {
+    position top
+    status_command while $HOME/.local/bin/swaybar.sh; do sleep 1; done
+    colors {
+        background $background
+        statusline $foreground
+        focused_workspace  $accent $accent $foreground
+        active_workspace   $background $background $accent
+        inactive_workspace $background $background $foreground
+        urgent_workspace   $background $background $urgent
+        binding_mode       #40a02b #40a02b $background
+    }
+}

@@ -1,0 +1,52 @@
+#!/bin/sh
+
+CONFIG_DIR="$HOME/.config"
+
+SWAY_DIR="$CONFIG_DIR/sway"
+ALACRITTY_DIR="$CONFIG_DIR/alacritty"
+FUZZEL_DIR="$CONFIG_DIR/fuzzel"
+
+LIGHT_THEME="$SWAY_DIR/theme.d/theme_light"
+DARK_THEME="$SWAY_DIR/theme.d/theme_dark"
+
+ALACRITTY_LIGHT="$ALACRITTY_DIR/alacritty_light.toml"
+ALACRITTY_DARK="$ALACRITTY_DIR/alacritty_dark.toml"
+
+FUZZEL_LIGHT="$FUZZEL_DIR/light.ini"
+FUZZEL_DARK="$FUZZEL_DIR/dark.ini"
+
+BG_LIGHT="dfd5c7"
+BG_DARK="2a2a3a"
+
+switch_theme() {
+  local theme=$1
+  local sway_theme=$2
+  local alacritty_theme=$3
+  local fuzzel_theme=$4
+  local bg_color=$5
+
+  ln -sf "$sway_theme" "$SWAY_DIR/theme"
+  ln -sf "$alacritty_theme" "$ALACRITTY_DIR/alacritty.toml"
+  ln -sf "$fuzzel_theme" "$FUZZEL_DIR/fuzzel.ini"
+
+  pkill swaybg 2>/dev/null
+  swaybg -c "$bg_color" &
+  sway reload
+}
+
+case $1 in
+  light)
+    switch_theme "light" "$LIGHT_THEME" "$ALACRITTY_LIGHT" "$FUZZEL_LIGHT" "$BG_LIGHT"
+    ;;
+  dark)
+    switch_theme "dark" "$DARK_THEME" "$ALACRITTY_DARK" "$FUZZEL_DARK" "$BG_DARK"
+    ;;
+  *)
+    CURRENT_HOUR=$(date +%H)
+    if [ "$CURRENT_HOUR" -ge 7 ] && [ "$CURRENT_HOUR" -lt 19 ]; then
+      switch_theme "light" "$LIGHT_THEME" "$ALACRITTY_LIGHT" "$FUZZEL_LIGHT" "$BG_LIGHT"
+    else
+      switch_theme "dark" "$DARK_THEME" "$ALACRITTY_DARK" "$FUZZEL_DARK" "$BG_DARK"
+    fi
+    ;;
+esac
